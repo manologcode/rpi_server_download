@@ -21,6 +21,7 @@
             const { name, description, port_app, color = false, logo = false } = data
             const css_color = color ? color : "#505050"
             let url = window.location.origin + port_app
+            url_logo = logo && !logo.includes('http') ? url + logo : logo 
             const icon = logo ? `<img src="${url + logo}"/>` : ""
             return (
                 `<a href="${url}" class="btn" style='background-color:${css_color}'>

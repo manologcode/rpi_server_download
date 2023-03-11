@@ -12,20 +12,20 @@ const elements = [
         description: "Explorador archivos",
         port_app: ":8088/",
         color: "#17a2b8",
-        logo: "/static/img/logo.svg"
+        logo: "https://avatars.githubusercontent.com/u/35781395?s=280&v=4"
     },
     {
         name: "TRANSMISSION",
         description: "Cliente Torrent",
         port_app: ":9091/",
         color: "#ffc107",
-        logo: "/transmission/web/style/transmission/images/logo.png"
+        logo: "/images/transmission.png"
     },
     {
         name: "AMULE",
         description: "Cliente Emule",
         port_app: ":4711/",
-        logo: "/images/amuleimages/sheserv_1.png"
+        logo: "/images/amule.png"
     },
     {
         name: "METUBE",

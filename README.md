@@ -1,12 +1,12 @@
 # Rapsberry Pi server download 
 
-#### Raspberry pi docker, transmision, amule, youtube-dl, filebrowser...
+#### Raspberry pi docker, portainer, transmision, amule, metube, filebrowser...
 
 Usar la rapsberry como equipo para tener un amule, un transmitions que es un cliente Torrent, para poder descargar archivos al tratarse de un equipo de bajo consumo y no hay problema en dejarlos encendido continuamente.
 
-Le ponemos también el servicio de youtube-dl que nos permite descargar videos de Youtube y si lo necesitamos convertirlos a mp3.
+Le ponemos también el servicio de metube que nos permite descargar videos de Youtube y si lo necesitamos convertirlos a mp3.
 
-Le he instalado un servidor samba y un servidor dlna para compartir los archivos por la red. También he incorporado el servicio de filebrowser para tener acceso a los archivos a traves de un navegador web.
+Le he instalado un servidor dlna para compartir los archivos por la red. También he incorporado el servicio de filebrowser para tener acceso a los archivos a traves de un navegador web.
 
 he creado un index para que sirva de lanzador de todas aplicaciones
 
@@ -19,9 +19,6 @@ Partimos de una rapsberry con un sistema Raspberry Pi OS Lite instalado, habilit
 * dejo pendiente hacer un tutorial de esta primera fase si alguien lo necesita
 
 # Previo
-
-rsync -avzrh -e ssh ./* pi@descarga.local:~/ --progress
-
 
 Necesitamos montar un disco duro sobre la raspberry para tener una capacidad de almacenaje
 
@@ -61,7 +58,7 @@ reiniciamos
 
 crear mis directorios
 
-    mkdir -p /media/disco/download/youtube-dl
+    mkdir -p /media/disco/download/youtube
     mkdir -p /media/disco/download/amule
     mkdir -p /media/disco/download/torrent
 
@@ -69,9 +66,10 @@ crear mis directorios
 
 # clonar el repositorio y ejecutar el compose
 
-git clone Rpi_server_download
+clonamos el repositorio en la home de nuestro rapsberry 
 
-cd Rpi_server_download
+git clone https://github.com/manologcode/rpi_server_download.git .      
+
 
 docker-compose up -d
 
@@ -79,7 +77,7 @@ para acceder a las aplicaciones hay montado un contenedor con nginx donde hay un
 
 abrir en navegador y colocar la ip de nuestra raspberry, en mi caso:
 
-    http://192.168.1.222
+    http://descarga.local
 
 
 ## contenedores montandos
